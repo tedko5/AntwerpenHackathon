@@ -1,8 +1,8 @@
 
 function openSidebar(name, description) {
     const sidebar = document.getElementById('infoSidebar');
-    document.getElementById('sidebarTitle').textContent = name;
-    document.getElementById('sidebarDescription').textContent = description;
+    document.getElementById('sidebarTitle').innerHTML = name;
+    document.getElementById('sidebarDescription').innerHTML = description;
     sidebar.classList.remove('hidden');
     sidebar.classList.add('show');
 }
@@ -54,7 +54,9 @@ let endMarker;
 function initMap(center) {
     if (!map) {
         map = L.map('map').setView(center, 14);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://carto.com/">CartoDB</a>, &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>',
+            subdomains: 'abcd',
             maxZoom: 19
         }).addTo(map);
 
@@ -80,6 +82,27 @@ function initMap(center) {
 
             // Set the destination field with the clicked coordinates
             document.getElementById("end").value = `${lat},${lon}`;
+
+            // Fetch the nearest tagged object from the backend
+            fetch(`http://127.0.0.1:5000/lookup?lat=${lat}&lon=${lon}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.tags) {
+                        const description = Object.entries(data.tags).map(([k, v]) => {
+                                const prettyKey = k.replace(/[:_]/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+                                const prettyValue = typeof v === 'string' ? v.replace(/_/g, " ") : v;
+                                return `<strong>${prettyKey}:</strong> ${prettyValue}`;
+                            })
+                            .join("<br>");
+                        const title = data.tags.name || `${data.type.toUpperCase()} @ ${lat.toFixed(5)}, ${lon.toFixed(5)}`;
+                        openSidebar(title, description);
+                    } else if (data.error) {
+                        openSidebar("Nothing here", "No tagged OSM feature was found at this location.");
+                    }
+                })
+                .catch(err => {
+                    console.error("Error fetching clicked location info:", err);
+                });
         });
     }
 }

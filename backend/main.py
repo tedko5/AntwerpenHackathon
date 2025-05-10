@@ -15,7 +15,7 @@ context = ssl.create_default_context(cafile=certifi.where())
 app = Flask(__name__)
 CORS(app)
 
-
+# insert OpenAI key here
 
 # Initialize geolocator (you can use OpenCage or others if needed)
 geolocator = Nominatim(user_agent="antwerp_night_route", ssl_context=context)
@@ -174,13 +174,14 @@ def route():
         policy = extract_routing_policy(note)
         print("Routing policy:", policy)
 
-        # Use extracted destination from policy if available
+        # Use destination from policy or note first, then fallback to 'end'
+        end_coords = None
         if 'destination' in policy:
             end_coords = get_location_from_text(policy['destination'])
-        elif end.strip():
-            end_coords = get_location_from_text(end)
-        else:
+        if not end_coords and note.strip():
             end_coords = get_location_from_text(note)
+        if not end_coords and end.strip():
+            end_coords = get_location_from_text(end)
 
         if not end_coords:
             return jsonify({"error": "Could not find end location from the note or 'end' field"}), 400
@@ -205,6 +206,39 @@ def route():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
+@app.route("/lookup", methods=["GET"])
+def lookup():
+    try:
+        lat = float(request.args.get("lat"))
+        lon = float(request.args.get("lon"))
+
+        min_dist = float("inf")
+        nearest = None
+
+        # Search nodes (they always have lat/lon)
+        def is_tagged_node(example):
+            return example['type'] == 'node' and example['tags'] != '{}'
+
+        tagged_nodes = ds['train'].filter(is_tagged_node)
+
+        for row in tagged_nodes:
+            d = ((row['lat'] - lat) ** 2 + (row['lon'] - lon) ** 2) ** 0.5
+            if d < min_dist:
+                min_dist = d
+                nearest = row
+
+        if nearest:
+            return jsonify({
+                "type": nearest["type"],
+                "tags": json.loads(nearest["tags"]),
+                "lat": nearest["lat"],
+                "lon": nearest["lon"]
+            })
+
+        return jsonify({"error": "No tagged object found nearby"}), 404
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
 
 if __name__ == "__main__":
     app.run(debug=False)
