@@ -2,6 +2,7 @@
 @import "search.css";
 @import "fonts.css";
 @import "about.css";
+@import "contact.css";
 
 /* Base reset */
 * {
@@ -78,12 +79,6 @@ button, input, textarea, select {
     font-family: "Miriam Libre", sans-serif;
 }
 
-/*footer {*/
-/*    text-align: center;*/
-/*    background-color: #1e1e1e;*/
-/*    color: #888;*/
-/*    font-size: 0.9rem;*/
-
-/*}*/
-
-
+.hidden {
+    display: none;
+}

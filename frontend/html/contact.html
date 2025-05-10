@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Antwerp@Night</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <script src="https://kit.fontawesome.com/294d8e8555.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+  <img src="../images/title.png" id="title" alt="Antwerp@Night">
+  <p class="title_text">Ready To Explore</p>
+  <h1 class="title_text">Antwerp at Night?</h1>
+  <p>Find safe and efficient routes after dark</p>
+</header>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="map.html">Map</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; 2025 Antwerp@Night Team</p>
+</footer>
+</body>
+</html>

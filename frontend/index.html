@@ -49,7 +49,6 @@
     <!-- Traditional Input (initially hidden) -->
     <div id="traditionalForm" class="form-section hidden">
         <input type="text" id="start" placeholder="Start location">
-
         <input type="text" id="end" placeholder="Destination">
 
         <div class="mode-toggle">
@@ -61,18 +60,21 @@
         <button onclick="submitTraditional()"><i class="fa-solid fa-magnifying-glass-location"></i> Search Route</button>
     </div>
 
-
-    <section id="results">
-        <!-- Route results will appear here -->
+    <section id="results" class="hidden">
+        <div class="map-and-directions">
+            <div id="mapContainer">
+                <!-- Your map goes here -->
+            </div>
+            <div id="routeInstructions">
+                <h3>Directions</h3>
+                <ul id="instructionsList">
+                    <!-- List of directions will be dynamically inserted here -->
+                </ul>
+            </div>
+        </div>
     </section>
-
-    <div id="infoSidebar" class="sidebar hidden">
-        <button class="close-btn" onclick="closeSidebar()">✕</button>
-        <h2 id="sidebarTitle">Shop Name</h2>
-        <p id="sidebarDescription">Description of the shop, hours, etc.</p>
-    </div>
-
 </main>
+
 
 <footer>
     <p>&copy; 2025 Antwerp@Night</p>

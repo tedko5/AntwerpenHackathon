@@ -44,3 +44,47 @@ function setMode(mode) {
     document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
     document.getElementById(`mode-${mode}`).classList.add('active');
 }
+
+function submitTraditional() {
+    // Your logic for processing the search...
+    // Once the search completes, show the results
+    const resultsSection = document.getElementById('results');
+    resultsSection.classList.remove('hidden'); // Show the results
+
+    // Generate map and directions (replace with your actual logic)
+    showMapAndDirections();
+}
+
+function submitNatural() {
+    // Your logic for processing the smart search...
+    // Once the search completes, show the results
+    const resultsSection = document.getElementById('results');
+    resultsSection.classList.remove('hidden'); // Show the results
+
+    // Generate map and directions (replace with your actual logic)
+    showMapAndDirections();
+}
+
+function showMapAndDirections() {
+    // Example directions array
+    const directions = [
+        "Head west on Meir",
+        "Turn left onto Frankrijklei",
+        "Turn right onto Pelgrimstraat",
+        "Arrive at your destination"
+    ];
+
+    // Show the instructions
+    showInstructions(directions);
+}
+
+function showInstructions(steps) {
+    const list = document.getElementById("instructionsList");
+    list.innerHTML = ""; // Clear previous instructions
+    steps.forEach(step => {
+        const li = document.createElement("li");
+        li.textContent = step;
+        list.appendChild(li);
+    });
+}
+
