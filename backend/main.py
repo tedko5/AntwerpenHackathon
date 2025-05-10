@@ -15,6 +15,8 @@ context = ssl.create_default_context(cafile=certifi.where())
 app = Flask(__name__)
 CORS(app)
 
+client = OpenAI(
+    api_key="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")
 
 # Initialize geolocator (you can use OpenCage or others if needed)
 geolocator = Nominatim(user_agent="antwerp_night_route", ssl_context=context)
