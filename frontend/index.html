@@ -4,24 +4,74 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Antwerp@Night</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+            <script type="text/javascript" src="js/main.js"></script>
+            <script src="https://kit.fontawesome.com/294d8e8555.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
-    <img src="images/title.png" id="title">
+    <img src="images/title.png" id="title" alt="Antwerp@Night">
+    <p class="title_text">Ready To Explore</p>
+    <h1 class="title_text">Antwerp at Night?</h1>
     <p>Find safe and efficient routes after dark</p>
+    <button onclick="openSidebar('Test Shop', 'This is a test description for a shop.')">
+        🔍 Test Sidebar
+    </button>
 </header>
 
+
+<nav class="navbar">
+    <div class="nav-container">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Map</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
 <main>
-    <section class="search-section">
-        <input type="text" id="start" placeholder="Start location" />
-        <input type="text" id="end" placeholder="Destination" />
-        <button id="searchBtn">Find Route</button>
-    </section>
+    <div class="input-toggle">
+        <button onclick="showForm('natural')" id="naturalBtn" class="active">Smart Search</button>
+        <button onclick="showForm('traditional')" id="traditionalBtn">Classic Navigation</button>
+    </div>
+
+    <!-- Natural Language Input (default visible) -->
+    <div id="naturalForm" class="form-section">
+        <label for="nlInput">Where do you want to go?</label>
+        <textarea id="nlInput" rows="3" placeholder="e.g. Take me to a well-lit street near a late-night pharmacy."></textarea>
+        <button onclick="submitNatural()"><i class="fa-solid fa-magnifying-glass-location"></i> Begin Smart Search</button>
+    </div>
+
+    <!-- Traditional Input (initially hidden) -->
+    <div id="traditionalForm" class="form-section hidden">
+        <input type="text" id="start" placeholder="Start location">
+
+        <input type="text" id="end" placeholder="Destination">
+
+        <div class="mode-toggle">
+            <button class="mode-btn active" onclick="setMode('walk')" id="mode-walk"><i class="fa-solid fa-person-walking"></i> Walk</button>
+            <button class="mode-btn" onclick="setMode('bike')" id="mode-bike"><i class="fa-solid fa-bicycle"></i> Bike</button>
+            <button class="mode-btn" onclick="setMode('drive')" id="mode-drive"><i class="fa-solid fa-car"></i> Drive</button>
+        </div>
+
+        <button onclick="submitTraditional()"><i class="fa-solid fa-magnifying-glass-location"></i> Search Route</button>
+    </div>
+
 
     <section id="results">
         <!-- Route results will appear here -->
     </section>
+
+    <div id="infoSidebar" class="sidebar hidden">
+        <button class="close-btn" onclick="closeSidebar()">✕</button>
+        <h2 id="sidebarTitle">Shop Name</h2>
+        <p id="sidebarDescription">Description of the shop, hours, etc.</p>
+    </div>
+
 </main>
 
 <footer>

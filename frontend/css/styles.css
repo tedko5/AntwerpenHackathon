@@ -1,0 +1,83 @@
+@import "navigation.css";
+@import "search.css";
+@import "fonts.css";
+
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Night theme colors */
+body {
+    background-color: #121212;
+    color: #eaeaea;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+}
+
+header p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+main {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+button, input, textarea, select {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+#results {
+    width: 100%;
+    max-width: 600px;
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 10px;
+    min-height: 100px;
+    border: 1px solid #333;
+}
+
+#title {
+    max-width: 400px;
+    min-width: 200px;
+    width: 25%;
+}
+
+.title_text {
+    font-variant: all-petite-caps;
+    margin-bottom: -20px;
+    font-family: "Miriam Libre", sans-serif;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1e1e1e;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+

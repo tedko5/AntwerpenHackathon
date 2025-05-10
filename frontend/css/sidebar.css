@@ -1,0 +1,40 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    min-width: 400px;
+    max-width: 600px;
+    height: 100%;
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 1.5rem;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.7);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease-in-out;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.sidebar.show {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
