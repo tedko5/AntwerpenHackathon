@@ -180,26 +180,6 @@ function drawRoute(coords) {
     map.fitBounds(routeLayer.getBounds());  // Adjust the map view to fit the entire route
 }
 
-function submitTraditional() {
-    // Your logic for processing the search...
-    // Once the search completes, show the results
-    const resultsSection = document.getElementById('results');
-    resultsSection.classList.remove('hidden'); // Show the results
-
-    // Generate map and directions (replace with your actual logic)
-    showMapAndDirections();
-}
-
-function submitNatural() {
-    // Your logic for processing the smart search...
-    // Once the search completes, show the results
-    const resultsSection = document.getElementById('results');
-    resultsSection.classList.remove('hidden'); // Show the results
-
-    // Generate map and directions (replace with your actual logic)
-    showMapAndDirections();
-}
-
 function showMapAndDirections() {
     // Example directions array
     const directions = [

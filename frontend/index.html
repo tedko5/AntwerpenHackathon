@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/styles.css" />
             <script type="text/javascript" src="js/main.js"></script>
             <script src="https://kit.fontawesome.com/294d8e8555.js" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css" />
+<script src="../node_modules/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
 <header>
@@ -61,10 +63,12 @@
         <button onclick="submitTraditional()"><i class="fa-solid fa-magnifying-glass-location"></i> Search Route</button>
     </div>
 
-
     <section id="results">
         <!-- Route results will appear here -->
+        <div id="map" style="height: 500px;"></div>
     </section>
+
+    <section id="directions"></section>
 
     <div id="infoSidebar" class="sidebar hidden">
         <button class="close-btn" onclick="closeSidebar()">✕</button>
