@@ -1,3 +1,4 @@
+
 function openSidebar(name, description) {
     const sidebar = document.getElementById('infoSidebar');
     document.getElementById('sidebarTitle').textContent = name;

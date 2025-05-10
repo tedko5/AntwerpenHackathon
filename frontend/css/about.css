@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+.header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    color: #EED260;
+}
+
+.header p {
+    margin-top: 0.5rem;
+    color: #bbb;
+}
+
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+.intro, .details, .team {
+    margin-bottom: 2.5rem;
+}
+
+.intro h2, .details h2, .team h2 {
+    color: #EED260;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.mission-vision {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px rgba(238, 210, 96, 0.2);
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 0 12px rgba(238, 210, 96, 0.4);
+}
+
+.card h3 {
+    color: #EED260;
+    margin-bottom: 0.8rem;
+}
+
+.details ul {
+    padding-left: 1.5rem;
+}
+
+.details li {
+    margin-bottom: 0.8rem;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.member {
+    flex: 1;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: background-color 0.3s;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(238, 210, 96, 0.2);
+}
+
+.member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 0.8rem;
+    border: 3px solid #EED260;
+}
+
+.member:hover {
+    background-color: #222;
+}
+
+.member h4 {
+    color: #EED260;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1e1e1e;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+
+
+.content {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.project-intro {
+    margin-bottom: 3rem;
+}
+
+.project-intro h2,
+.team h2 {
+    color: #EED260;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-intro p {
+    color: #ddd;
+}
+
+
+
+.member {
+
+}
+
+
+
+.member h3 {
+    color: #fff;
+    margin-bottom: 0.2rem;
+}
+
+.member p {
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #888;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+    margin-top: 3rem;
+}

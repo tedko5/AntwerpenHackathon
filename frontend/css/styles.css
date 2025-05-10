@@ -1,6 +1,7 @@
 @import "navigation.css";
 @import "search.css";
 @import "fonts.css";
+@import "about.css";
 
 /* Base reset */
 * {
@@ -19,11 +20,15 @@ body {
     overflow-x: hidden;
 }
 
-header {
-    text-align: center;
-    padding: 2rem 1rem;
+header,
+footer {
+    width: 100%;
     background-color: #1e1e1e;
+    color: #f0f0f0;
+    padding: 2rem 1rem;
     border-bottom: 1px solid #333;
+    text-align: center;
+    font-family: "Miriam Libre", sans-serif;
 }
 
 header p {
@@ -64,6 +69,7 @@ button, input, textarea, select {
     max-width: 400px;
     min-width: 200px;
     width: 25%;
+    margin-bottom: -20px;
 }
 
 .title_text {
@@ -72,12 +78,12 @@ button, input, textarea, select {
     font-family: "Miriam Libre", sans-serif;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #1e1e1e;
-    color: #888;
-    font-size: 0.9rem;
-}
+/*footer {*/
+/*    text-align: center;*/
+/*    background-color: #1e1e1e;*/
+/*    color: #888;*/
+/*    font-size: 0.9rem;*/
+
+/*}*/
 
 

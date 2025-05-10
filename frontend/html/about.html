@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About | Antwerp@Night</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+    <script src="https://kit.fontawesome.com/294d8e8555.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+    <img src="../images/title.png" id="title" alt="Antwerp@Night">
+    <p class="title_text">Ready To Explore</p>
+    <h1 class="title_text">Antwerp at Night?</h1>
+    <p>Find safe and efficient routes after dark</p>
+    <button onclick="openSidebar('Test Shop', 'This is a test description for a shop.')">
+        🔍 Test Sidebar
+    </button>
+</header>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="map.html">Map</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="content">
+    <section class="intro">
+        <h2>About the Project</h2>
+        <p><strong>Antwerp@Night</strong> is a smart-routing web app built for the <em>North Star AGI Hackathon</em>, developed in response to the <strong>Navigator’s Award</strong>. Using Antwerp’s <strong>OpenStreetMap</strong> data, our tool helps users find well-lit and safe routes after dark.</p>
+    </section>
+
+    <section class="mission-vision">
+        <div class="card">
+            <h3>🌟 Mission</h3>
+            <p>To empower residents and visitors of Antwerp with a smart, safe, and intuitive nighttime navigation tool that enhances personal security and confidence after dark.</p>
+        </div>
+        <div class="card">
+            <h3>🔭 Vision</h3>
+            <p>We want to make it easier and safer for people to move around the city at night. We're building a tool that helps you feel more confident wherever you go, especially after dark.</p>
+        </div>
+    </section>
+
+    <section class="details">
+        <h2>How It Works</h2>
+        <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fa-solid fa-circle-arrow-right"></i></span>Use natural language search to find destinations like “a pharmacy near a well-lit street.”</li>
+            <li><span class="fa-li"><i class="fa-solid fa-circle-arrow-right"></i></span>AI interprets context and suggests routes based on available data.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-circle-arrow-right"></i></span>Or choose classic mode to enter a start and end point with your preferred transport method.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-circle-arrow-right"></i></span>Using data from OpenStreetMap, we will generate a route that maximises the amount of streets that are marked at "lit".</li>
+        </ul>
+    </section>
+    <section class="team">
+        <h2>Meet the Team</h2>
+        <div class="team-members">
+            <div class="member">
+                <img src="../images/teodor.png" alt="Teodor Patsov" />
+                <h3>Teodor Patsov</h3>
+                <p>Data Engineer & Back-End Developer</p>
+            </div>
+            <div class="member">
+                <img src="../images/vivian.png" alt="Vivian Kinner" />
+                <h3>Vivian Kinner</h3>
+                <p>UX Designer & Front-End Developer</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2025 Antwerp@Night Team</p>
+</footer>
+</body>
+</html>
